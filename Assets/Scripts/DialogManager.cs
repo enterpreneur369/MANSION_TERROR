@@ -6,40 +6,44 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject dialogBox;
-    public Text dialogText;
+    public GameObject dialogBox; // Referencia al objeto que contiene el cuadro de diálogo en la UI.
+    public Text dialogText; // Referencia al componente de texto donde se mostrará el diálogo.
 
-    public bool dialogActive;
+    public bool dialogActive; // Bandera para controlar si el diálogo está activo o no.
 
-    public string[] dialogLines;
+    public string[] dialogLines; // Arreglo de cadenas que contiene las líneas de diálogo a mostrar.
 
-    public int currentDialogLine;
-    // Start is called before the first frame update
+    public int currentDialogLine; // Índice de la línea de diálogo actual que se está mostrando.
+
+    // Start se llama antes de la actualización del primer frame.
     void Start()
     {
-        
+        // Aquí se inicializarían variables si fuera necesario, pero está vacío.
     }
 
+    // Esta función se encarga de mostrar el cuadro de diálogo con el texto proporcionado.
     public void ShowDialog(string[] text)
     {
-        dialogActive = true;
-        dialogBox.SetActive(true);
-        currentDialogLine = 0;
-        dialogLines = text;
+        dialogActive = true; // Activa el diálogo.
+        dialogBox.SetActive(true); // Hace visible el cuadro de diálogo en la UI.
+        currentDialogLine = 0; // Inicia en la primera línea de diálogo.
+        dialogLines = text; // Asigna el texto proporcionado al arreglo de líneas de diálogo.
     }
-    // Update is called once per frame
+    // Update se llama una vez por frame.
     void Update()
     {
+        // Si el diálogo está activo y el jugador presiona la tecla Espacio, avanza a la siguiente línea de diálogo.
         if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
             currentDialogLine++;
         }
 
+        // Si se han mostrado todas las líneas de diálogo, desactiva el cuadro de diálogo y reinicia el índice de línea.
         if (currentDialogLine >= dialogLines.Length)
         {
-            dialogActive = false;
-            dialogBox.SetActive(false);
-            currentDialogLine = 0;
+            dialogActive = false; // Desactiva el diálogo.
+            dialogBox.SetActive(false); // Oculta el cuadro de diálogo en la UI.
+            currentDialogLine = 0; // Reinicia el índice de la línea de diálogo.
         }
     }
 }

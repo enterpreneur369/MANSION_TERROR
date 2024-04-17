@@ -4,69 +4,70 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 4.0f;
-    private bool walking = false;
-    public Vector2 lastMovement = Vector2.zero;
-    private const string horizontal = "Horizontal";
-    private const string vertical = "Vertical";
-    private const string lastHorizontal = "LastHorizontal";
-    private const string lastVertical = "LastVertical";
-    private const string pWalking = "Walking";
-    private Rigidbody2D _playerRigidBody;
-    private Animator _animator;
-    public static bool playerCreated;
-    public string nextPlaceName;
+    // Declaración de variables y constantes para controlar el movimiento y animación del jugador.
+    public float speed = 4.0f; // Velocidad de movimiento del jugador.
+    private bool walking = false; // Indica si el jugador está caminando.
+    public Vector2 lastMovement = Vector2.zero; // Última dirección de movimiento del jugador.
+    private const string horizontal = "Horizontal"; // Nombre del eje horizontal para el input.
+    private const string vertical = "Vertical"; // Nombre del eje vertical para el input.
+    private const string lastHorizontal = "LastHorizontal"; // Último valor horizontal para la animación.
+    private const string lastVertical = "LastVertical"; // Último valor vertical para la animación.
+    private const string pWalking = "Walking"; // Parámetro de caminar para la animación.
+    private Rigidbody2D _playerRigidBody; // Componente de físicas para el movimiento.
+    private Animator _animator; // Componente de animación.
+    public static bool playerCreated; // Indica si el jugador ya fue creado.
+    public string nextPlaceName; // Nombre del próximo lugar a cargar.
     
-    // Start is called before the first frame update
+    // Start se llama antes de la primera actualización del frame.
     void Start()
     {
-        _animator = GetComponent<Animator>();
-        _playerRigidBody = GetComponent<Rigidbody2D>();
+        // Inicialización de componentes.
+        _animator = GetComponent<Animator>(); // Obtiene el componente Animator del objeto.
+        _playerRigidBody = GetComponent<Rigidbody2D>(); // Obtiene el componente Rigidbody2D del objeto.
 
+        // Verifica si el jugador ya fue creado para evitar duplicados al cargar nuevas escenas.
         if (!playerCreated)
         {
-            playerCreated = true;
-            DontDestroyOnLoad(this.transform.gameObject);
+            playerCreated = true; // Marca al jugador como creado.
+            DontDestroyOnLoad(this.transform.gameObject); // Evita que el objeto se destruya al cargar una nueva escena.
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destruye el objeto si el jugador ya fue creado anteriormente.
         }
     }
 
-    // Update is called once per frame
+    // Update se llama una vez por frame.
     void Update()
     {
-        walking = false;
-        // distance = speed * time
+        walking = false; // Reinicia el estado de caminar.
+        // Control de movimiento horizontal.
         if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
         {
-            /*
-            this.transform.Translate(new Vector3(Input.GetAxisRaw(horizontal) * speed *
-                                                 Time.deltaTime, 0, 0));*/
+            // Mueve el jugador horizontalmente basado en el input.
             _playerRigidBody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * speed, 
                 _playerRigidBody.velocity.y);
-            walking = true;
-            lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0);
+            walking = true; // Indica que el jugador está caminando.
+            lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0); // Guarda la última dirección de movimiento horizontal.
         }
         
+        // Control de movimiento vertical.
         if (Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f)
         {
-            /*
-            this.transform.Translate(new Vector3(0, Input.GetAxisRaw(vertical) * speed *
-                                                   Time.deltaTime, 0));*/
+            // Mueve el jugador verticalmente basado en el input.
             _playerRigidBody.velocity = new Vector2(_playerRigidBody.velocity.x, 
                 Input.GetAxisRaw(vertical) * speed);
-            walking = true;
-            lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
+            walking = true; // Indica que el jugador está caminando.
+            lastMovement = new Vector2(0, Input.GetAxisRaw(vertical)); // Guarda la última dirección de movimiento vertical.
         }
 
+        // Si el jugador no está caminando, detiene su movimiento.
         if (!walking)
         {
             _playerRigidBody.velocity = Vector2.zero;
         }
         
-
+        // Actualiza los parámetros de la animación basados en el movimiento.
         _animator.SetFloat(horizontal, Input.GetAxisRaw(horizontal));
         _animator.SetFloat(vertical, Input.GetAxisRaw(vertical));
         _animator.SetBool(pWalking, walking);

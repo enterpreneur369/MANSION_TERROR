@@ -5,24 +5,26 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Start se llama antes de la primera actualización del frame
     void Start()
     {
-        
+        // Aquí se inicializaría el objeto si fuera necesario
     }
 
-    // Update is called once per frame
+    // Update se llama una vez por frame
     void Update()
     {
-        
+        // Aquí se podrían realizar comprobaciones o actualizaciones constantes del objeto
     }
 
+    // Esta función se llama cuando otro collider entra en contacto con este objeto
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Verifica si el objeto con el que colisionó tiene la etiqueta "Player"
         if (other.gameObject.tag.Equals("Player"))
         {
-            Destroy(gameObject);
-            //gameObject.SetActive(false);
+            Destroy(gameObject); // Destruye este objeto
+            //gameObject.SetActive(false); // Otra opción sería desactivar el objeto en lugar de destruirlo
         }
     }
 }

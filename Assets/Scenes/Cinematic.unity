@@ -149,7 +149,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2678503}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 44e70976d25348e458c960c2dde07dbd, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: eaf183c4ea94208479bd293c5d5c7de0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 924771494}
@@ -165,14 +165,14 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: 
+  m_Url: https://drive.google.com/uc?export=download&id=1ZpWwDbcI_wWCZUD4zbs9bqLax63U4ljq
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!4 &2678505
@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 2678503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 439.80002, y: 247.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968d5e9ef7b80d74e992b5c0966de727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AudioSource: {fileID: 0}
+  videoFileName: cinematic.ogv
 --- !u!1 &888230687
 GameObject:
   m_ObjectHideFlags: 0
