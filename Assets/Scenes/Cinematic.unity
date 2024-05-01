@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968d5e9ef7b80d74e992b5c0966de727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoFileName: cinematic.ogv
+  videoFileName: cinematic.mp4
 --- !u!1 &888230687
 GameObject:
   m_ObjectHideFlags: 0
