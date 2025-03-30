@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *  Nombre comportamiento: No destruir cuando se cargue en el mapa
+ *  Caso de uso: Se usa para persistir ciertos elementos en diferentes escenas: jugador, camara, hud, misiones.
+ *  Datos de entrada: El padre que no se debería borrar al cargar la escena.
+ *  Datos de salida: Mostrar el game objet en la nueva escena.
+ *  Precondiciones: Haberle colocado el script al game object que se desea persistir entre escenas.
+ */
+
 public class DontDestroyOnLoad : MonoBehaviour
 {
     // Awake se llama antes de la primera actualización del primer frame

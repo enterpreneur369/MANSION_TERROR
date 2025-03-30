@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,10 +12,12 @@ public class DialogManager : MonoBehaviour
 
     public int currentDialogLine; // Índice de la línea de diálogo actual que se está mostrando.
 
+    private PlayerController _playerController; // El jugador que está dialogando
+
     // Start se llama antes de la actualización del primer frame.
     void Start()
     {
-        // Aquí se inicializarían variables si fuera necesario, pero está vacío.
+        _playerController = FindFirstObjectByType<PlayerController>();
     }
 
     // Esta función se encarga de mostrar el cuadro de diálogo con el texto proporcionado.
@@ -28,6 +27,7 @@ public class DialogManager : MonoBehaviour
         dialogBox.SetActive(true); // Hace visible el cuadro de diálogo en la UI.
         currentDialogLine = 0; // Inicia en la primera línea de diálogo.
         dialogLines = text; // Asigna el texto proporcionado al arreglo de líneas de diálogo.
+        _playerController.playerTalking = true; // Activa la bandera de que está hablando con un NPC
     }
     // Update se llama una vez por frame.
     void Update()
@@ -44,6 +44,11 @@ public class DialogManager : MonoBehaviour
             dialogActive = false; // Desactiva el diálogo.
             dialogBox.SetActive(false); // Oculta el cuadro de diálogo en la UI.
             currentDialogLine = 0; // Reinicia el índice de la línea de diálogo.
+            _playerController.playerTalking = false;
+        }
+        else
+        {
+            dialogText.text = dialogLines[currentDialogLine];
         }
     }
 }

@@ -1,6 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+/*
+ *  Nombre comportamiento: Caminar
+ *  Caso de uso: El player requiere caminar para moverse dentro del videojuego a las diferentes escenas.
+ *  Datos de entrada: teclado: A, S, W, D
+ *  Datos de salida: movimiento hacia derecha, abajo, arriba y derecha 
+ */
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,8 +21,10 @@ public class PlayerController : MonoBehaviour
     private const string pWalking = "Walking"; // Parámetro de caminar para la animación.
     private Rigidbody2D _playerRigidBody; // Componente de físicas para el movimiento.
     private Animator _animator; // Componente de animación.
+    public Image pausePlayPanel;
     public static bool playerCreated; // Indica si el jugador ya fue creado.
     public string nextPlaceName; // Nombre del próximo lugar a cargar.
+    public bool playerTalking; // Indica si el jugador está hablando con un NPC
     
     // Start se llama antes de la primera actualización del frame.
     void Start()
@@ -35,43 +43,63 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject); // Destruye el objeto si el jugador ya fue creado anteriormente.
         }
+
+        playerTalking = false;
     }
 
     // Update se llama una vez por frame.
-    void Update()
+   void Update()
     {
-        walking = false; // Reinicia el estado de caminar.
-        // Control de movimiento horizontal.
-        if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
+        if (playerTalking)
         {
-            // Mueve el jugador horizontalmente basado en el input.
-            _playerRigidBody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * speed, 
-                _playerRigidBody.velocity.y);
-            walking = true; // Indica que el jugador está caminando.
-            lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0); // Guarda la última dirección de movimiento horizontal.
+            _playerRigidBody.linearVelocity = Vector2.zero;
         }
-        
-        // Control de movimiento vertical.
-        if (Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f)
+        walking = false; // Reinicia el estado de caminar.
+        float horizontalInput = Input.GetAxisRaw(horizontal);
+        float verticalInput = Input.GetAxisRaw(vertical);
+
+        // Si el jugador se mueve en ambos ejes, damos prioridad a uno.
+        if (Mathf.Abs(horizontalInput) > 0.5f && Mathf.Abs(verticalInput) > 0.5f)
         {
-            // Mueve el jugador verticalmente basado en el input.
-            _playerRigidBody.velocity = new Vector2(_playerRigidBody.velocity.x, 
-                Input.GetAxisRaw(vertical) * speed);
-            walking = true; // Indica que el jugador está caminando.
-            lastMovement = new Vector2(0, Input.GetAxisRaw(vertical)); // Guarda la última dirección de movimiento vertical.
+            // Priorizar movimiento horizontal, puedes cambiar esto si prefieres vertical.
+            verticalInput = 0;
+        }
+
+        // Control de movimiento horizontal.
+        if (Mathf.Abs(horizontalInput) > 0.5f)
+        {
+            _playerRigidBody.linearVelocity = new Vector2(horizontalInput * speed, _playerRigidBody.linearVelocity.y);
+            walking = true;
+            lastMovement = new Vector2(horizontalInput, 0); // Guarda la última dirección de movimiento horizontal.
+        }
+
+        // Control de movimiento vertical.
+        if (Mathf.Abs(verticalInput) > 0.5f)
+        {
+            _playerRigidBody.linearVelocity = new Vector2(_playerRigidBody.linearVelocity.x, verticalInput * speed);
+            walking = true;
+            lastMovement = new Vector2(0, verticalInput); // Guarda la última dirección de movimiento vertical.
         }
 
         // Si el jugador no está caminando, detiene su movimiento.
         if (!walking)
         {
-            _playerRigidBody.velocity = Vector2.zero;
+            _playerRigidBody.linearVelocity = Vector2.zero;
         }
         
+        // Si el jugador pausa el juego con P
+        if (Input.GetKey(KeyCode.P))
+        {
+            pausePlayPanel.gameObject.SetActive(true);
+            pausePlayPanel.GetComponent<UIManager>().StopGame();
+        }
+
         // Actualiza los parámetros de la animación basados en el movimiento.
-        _animator.SetFloat(horizontal, Input.GetAxisRaw(horizontal));
-        _animator.SetFloat(vertical, Input.GetAxisRaw(vertical));
+        _animator.SetFloat(horizontal, horizontalInput);
+        _animator.SetFloat(vertical, verticalInput);
         _animator.SetBool(pWalking, walking);
         _animator.SetFloat(lastHorizontal, lastMovement.x);
         _animator.SetFloat(lastVertical, lastMovement.y);
     }
+
 }
