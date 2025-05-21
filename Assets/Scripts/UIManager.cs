@@ -29,6 +29,9 @@ public class UIManager : MonoBehaviour
     public void GoToCinematic()
     {
         SceneManager.LoadScene("Cinematic");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
     }
 
     // Este método carga la escena llamada "ControlsUI".

@@ -16,6 +16,11 @@ public class Item : MonoBehaviour
     // Start se llama antes de la primera actualización del frame
     void Start()
     {
+        if (PlayerPrefs.GetInt(gameObject.name, 0) == 1)
+        {
+            gameObject.SetActive(false);
+        }
+
         // Aquí se inicializaría el objeto si fuera necesario
     }
 
@@ -31,8 +36,11 @@ public class Item : MonoBehaviour
         // Verifica si el objeto con el que colisionó tiene la etiqueta "Player"
         if (other.gameObject.tag.Equals("Player"))
         {
-            Destroy(gameObject); // Destruye este objeto
-            //gameObject.SetActive(false); // Otra opción sería desactivar el objeto en lugar de destruirlo
+            PlayerPrefs.SetInt(gameObject.name, 1);
+            PlayerPrefs.Save();
+
+            //Destroy(gameObject); // Destruye este objeto
+            gameObject.SetActive(false); // Otra opción sería desactivar el objeto en lugar de destruirlo
         }
     }
 }

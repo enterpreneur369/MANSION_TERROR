@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAssembly", "MyAssembly.csproj", "{B728D034-3756-3917-DC34-8B41539E8331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsPlayMode", "TestsPlayMode.csproj", "{4E3CE2CC-ADAC-9833-549A-7B03DBE1BC17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEditMode", "TestEditMode.csproj", "{A2AC7CF3-BA3B-FA43-253D-2CD086B3DE62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B728D034-3756-3917-DC34-8B41539E8331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B728D034-3756-3917-DC34-8B41539E8331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B728D034-3756-3917-DC34-8B41539E8331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B728D034-3756-3917-DC34-8B41539E8331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3CE2CC-ADAC-9833-549A-7B03DBE1BC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3CE2CC-ADAC-9833-549A-7B03DBE1BC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3CE2CC-ADAC-9833-549A-7B03DBE1BC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3CE2CC-ADAC-9833-549A-7B03DBE1BC17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2AC7CF3-BA3B-FA43-253D-2CD086B3DE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2AC7CF3-BA3B-FA43-253D-2CD086B3DE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2AC7CF3-BA3B-FA43-253D-2CD086B3DE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2AC7CF3-BA3B-FA43-253D-2CD086B3DE62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

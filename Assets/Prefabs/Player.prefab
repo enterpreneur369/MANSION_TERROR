@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5066410379491559864}
   - component: {fileID: 8340447222445170070}
   - component: {fileID: 1423759175179305252}
+  - component: {fileID: 7946369899102789298}
   - component: {fileID: 2356859951175571022}
   - component: {fileID: 7872625968115240502}
-  - component: {fileID: 7946369899102789298}
+  - component: {fileID: 3749423784211487779}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1673314699
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 634180105, guid: e11c9671c0fc6a648bf9eca77d618d07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,6 +138,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.55501485, y: 0.985167}
   m_EdgeRadius: 0
+--- !u!50 &7946369899102789298
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808249917283455708}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &2356859951175571022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,30 +204,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &7946369899102789298
-Rigidbody2D:
-  serializedVersion: 5
+--- !u!114 &3749423784211487779
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808249917283455708}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8823b5dc058c0714db07c63436008a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bag:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inv: {fileID: 0}
+  selector: {fileID: 0}
+  ID: 0

@@ -907,6 +907,7 @@ GameObject:
   - component: {fileID: 653723078}
   - component: {fileID: 653723077}
   - component: {fileID: 653723080}
+  - component: {fileID: 653723081}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Item
@@ -926,6 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11d80df2421b8e4c806d60bbc89c35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: bone
 --- !u!212 &653723078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -968,7 +970,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1673314699
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 679579070, guid: 70080fcf2f2c0e5438da37907b07f8f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1042,6 +1044,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6659813, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &653723081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653723076}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f207718df3c5dde42a637f38095c6e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: bone
 --- !u!1001 &981827659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1182,7 +1197,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1673314699
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
