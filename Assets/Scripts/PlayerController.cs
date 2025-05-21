@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+//correccion de redundacias se corrigen los controles 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 4.0f;

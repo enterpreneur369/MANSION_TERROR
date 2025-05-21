@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B728D034-3756-3917-DC34-8B41539E8331}</ProjectGuid>
+    <ProjectGuid>{6D6191A3-6CBC-F3C9-A851-6AE0327B9915}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>MyAssembly</AssemblyName>

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4E3CE2CC-ADAC-9833-549A-7B03DBE1BC17}</ProjectGuid>
+    <ProjectGuid>{68C8ED68-63BC-1EFD-42F1-9616A90D4F37}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>TestsPlayMode</AssemblyName>
@@ -1042,7 +1042,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="MyAssembly.csproj">
-      <Project>{B728D034-3756-3917-DC34-8B41539E8331}</Project>
+      <Project>{6D6191A3-6CBC-F3C9-A851-6AE0327B9915}</Project>
       <Name>MyAssembly</Name>
     </ProjectReference>
   </ItemGroup>

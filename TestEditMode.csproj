@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A2AC7CF3-BA3B-FA43-253D-2CD086B3DE62}</ProjectGuid>
+    <ProjectGuid>{D20C7560-C127-90B2-C66A-BE3802014A97}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>TestEditMode</AssemblyName>
@@ -1078,7 +1078,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="MyAssembly.csproj">
-      <Project>{B728D034-3756-3917-DC34-8B41539E8331}</Project>
+      <Project>{6D6191A3-6CBC-F3C9-A851-6AE0327B9915}</Project>
       <Name>MyAssembly</Name>
     </ProjectReference>
   </ItemGroup>
