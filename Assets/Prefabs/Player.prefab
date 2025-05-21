@@ -178,10 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  lastMovement: {x: 0, y: 0}
   pausePlayPanel: {fileID: 0}
-  nextPlaceName: 
   playerTalking: 0
+  lastMovement: {x: 0, y: 0}
+  nextPlaceName: 
 --- !u!95 &7872625968115240502
 Animator:
   serializedVersion: 7
