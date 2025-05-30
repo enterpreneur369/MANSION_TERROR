@@ -1066,7 +1066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1383713941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,8 +1333,8 @@ GameObject:
   - component: {fileID: 1952074106}
   - component: {fileID: 1952074108}
   - component: {fileID: 1952074109}
-  - component: {fileID: 1952074110}
   - component: {fileID: 1952074111}
+  - component: {fileID: 1952074110}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged

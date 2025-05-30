@@ -24,6 +24,7 @@ public class ItemsPool : MonoBehaviour
         if (!collectedItems.Contains(itemName))
         {
             collectedItems.Add(itemName);
+            Debug.Log($"Item added: {itemName}"); // Log para depuración
         }
     }
 

@@ -7,6 +7,7 @@ public class Dog : MonoBehaviour
 
     private bool playerInZone = false;
     private InventoryManager inventoryManager;
+    private ItemsPool ItemsPool; // Pool de ítems para verificar si el hueso ha sido recogido.
 
     void Start()
     {
@@ -16,6 +17,12 @@ public class Dog : MonoBehaviour
         {
             dogAudio = GetComponent<AudioSource>(); // Intenta obtener el AudioSource automáticamente.
         }
+        // Verifica si el estado del perro ha sido guardado
+        if (PlayerPrefs.GetInt("Dog", 0) == 1) // 0 es el valor por defecto si no se ha guardado nada
+        {
+            gameObject.SetActive(false); // Oculta el perro si ya se ha ido
+        }
+        ItemsPool = FindFirstObjectByType<ItemsPool>(); // Obtiene el pool de ítems.
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -41,12 +48,18 @@ public class Dog : MonoBehaviour
 
     public void GiveBoneToDog()
     {
-        if (inventoryManager != null)
+        if (inventoryManager != null && ItemsPool != null )
         {
-            inventoryManager.RemoveItem(1); // 1 = Hueso
+            if (ItemsPool.HasItem("bone")) // Verifica si el hueso (ID: 1) está en ItemsPool
+            {
+                inventoryManager.RemoveItem(1); // Remueve el hueso del inventario
+                DisappearDog(); // Hace que el perro se vaya
+            }
+            else
+            {
+                Debug.Log("El perro necesita un hueso, pero no está en el pool de ítems.");
+            }
         }
-
-        DisappearDog(); // Ejecuta la acción para hacer que el perro se vaya.
     }
 
     void DisappearDog()
@@ -62,5 +75,6 @@ public class Dog : MonoBehaviour
         }
 
         gameObject.SetActive(false); // Oculta el perro.
+        PlayerPrefs.SetInt("Dog", 1); // Guarda el estado de que el perro se ha ido.
     }
 }

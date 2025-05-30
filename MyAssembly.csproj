@@ -63,25 +63,27 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\QuestItem.cs" />
     <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
-    <Compile Include="Assets\Scripts\NPCDialog.cs" />
+    <Compile Include="Assets\Scripts\Places\GoToNewPlace.cs" />
+    <Compile Include="Assets\Scripts\Places\SpawnZone.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\UIManager.cs" />
-    <Compile Include="Assets\Scripts\items\bound.cs" />
-    <Compile Include="Assets\Scripts\DialogManager.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\ItemsPool.cs" />
+    <Compile Include="Assets\Scripts\items\Bone.cs" />
+    <Compile Include="Assets\Scripts\NPC and Enemis\GhostAI.cs" />
+    <Compile Include="Assets\Scripts\UI\DialogManager.cs" />
+    <Compile Include="Assets\Scripts\items\ItemsPool.cs" />
     <Compile Include="Assets\Scripts\items\ladder.cs" />
     <Compile Include="Assets\Scripts\items\flashlight.cs" />
-    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\items\Item.cs" />
     <Compile Include="Assets\Scripts\ActionsManager.cs" />
-    <Compile Include="Assets\Scripts\GhostAI.cs" />
-    <Compile Include="Assets\Scripts\GoToNewPlace.cs" />
-    <Compile Include="Assets\Scripts\Dog.cs" />
+    <Compile Include="Assets\Scripts\Places\Condition.cs" />
+    <Compile Include="Assets\Scripts\items\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\NPC and Enemis\Dog.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\MISSIONkEY\key.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Cinematic.cs" />
     <Compile Include="Assets\Scripts\Quest.cs" />
-    <Compile Include="Assets\Scripts\SpawnZone.cs" />
+    <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\NPCDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Scripts.asmdef" />

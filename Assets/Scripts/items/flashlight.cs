@@ -11,8 +11,7 @@ public class Flashlight : MonoBehaviour
             Destroy(gameObject); // Si el ítem ya ha sido recogido, no se muestra
         }
     }
-
-    private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

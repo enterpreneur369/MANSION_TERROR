@@ -13,6 +13,14 @@ public class InventoryManager : MonoBehaviour
     {
         if (inventoryObject.CompareTag("Item"))
         {
+            // Verificar si el objeto es la llave y si la escalera no está en el inventario
+            if (inventoryObject.name == "key" && !ItemsPool.Instance.HasItem("ladder"))
+            {
+                Debug.Log("You need a ladder to obtain the key.");
+                return; // No permite tomar el object key
+            }
+
+            // Si la condición anterior no se cumple, el ítem puede ser agregado
             for (int i = 0; i < bag.Count; i++)
             {
                 if (!bag[i].GetComponent<Image>().enabled)
@@ -34,7 +42,7 @@ public class InventoryManager : MonoBehaviour
             ID--;
 
         selector.transform.position = bag[ID].transform.position;
-        Debug.Log("El item seleccionado es: " + ID);
+        //Debug.Log("El item seleccionado es: " + ID);
     }
 
     public bool HasItem(int itemIndex)
