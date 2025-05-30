@@ -25,11 +25,19 @@ public class ItemsPool : MonoBehaviour
         {
             collectedItems.Add(itemName);
             Debug.Log($"Item added: {itemName}"); // Log para depuración
+            Debug.Log("Current items in the pool: " + string.Join(", ", collectedItems));
+
         }
     }
 
     public bool HasItem(string itemName)
     {
         return collectedItems.Contains(itemName);
+    }
+    public bool HasLadder()
+    {
+        Debug.Log("Checking for ladder in items pool.");
+        return HasItem("ladder");
+
     }
 }

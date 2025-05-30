@@ -39,7 +39,7 @@ public class QuestItem : MonoBehaviour
             if (_questManager.quests[questId].gameObject.activeInHierarchy && !_questManager.questCompleted[questId])
             {
                 _questManager.itemCollected = itemName;
-                _questManager.quests[questId].gameObject.SetActive(false);
+               // _questManager.quests[questId].gameObject.SetActive(false);
             }
         }
     }

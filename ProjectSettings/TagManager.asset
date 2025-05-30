@@ -9,6 +9,7 @@ TagManager:
   - pauseMenu
   - bone
   - lintern
+  - key
   layers:
   - Default
   - TransparentFX

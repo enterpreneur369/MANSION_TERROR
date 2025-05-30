@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e61c36c5f7e06b4eb0b20afb333b05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Ladder
+  itemName: ladder
 --- !u!1 &1118609108
 GameObject:
   m_ObjectHideFlags: 0

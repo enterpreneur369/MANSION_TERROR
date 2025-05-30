@@ -11,15 +11,32 @@ public class InventoryManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D inventoryObject)
     {
-        if (inventoryObject.CompareTag("Item") && inventoryObject.name != "key")
+        if (inventoryObject.CompareTag("key"))
+        {
+        // Verificar si el objeto es la llave y si la escalera está en el inventario
+            if (ItemsPool.Instance.HasLadder())
+            {
+                ItemsPool.Instance.AddItem("key");
+                inventoryObject.tag = "Item"; // Cambiar la etiqueta del objeto para evitar que se recoja de nuevo
+                Debug.Log("Object key obtained!");
+                Destroy(inventoryObject.gameObject); // Destruir el objeto después de tomarlo
+            }
+            else
+            {
+                Debug.Log("You need a ladder to obtain the key.");
+                return; // No permite tomar el object key
+            }
+
+        }
+        if (inventoryObject.CompareTag("Item") )
         {
             // Verificar si el objeto es la llave y si la escalera no está en el inventario
-            if (inventoryObject.name == "key" && !ItemsPool.Instance.HasItem("ladder"))
+           /* if (inventoryObject.name == "key" && !ItemsPool.Instance.HasItem("ladder"))
             {
                 Debug.Log("You need a ladder to obtain the key.");
                 gameObject.GetComponent<Image>().enabled = true;
                 return; // No permite tomar el object key
-            }
+            }*/
             
             
                 // Si la condición anterior no se cumple, el ítem puede ser agregado
@@ -34,6 +51,7 @@ public class InventoryManager : MonoBehaviour
                 }
             
         }
+        
     }
 
     void Navigate()

@@ -13,9 +13,13 @@ public class Key : MonoBehaviour
             Debug.Log("Object key obtained!");
             Destroy(gameObject); // Destruir el objeto después de tomarlo
         }
-        else
+        else if (!ItemsPool.Instance.HasLadder())
         {
             Debug.Log("You need a ladder to obtain the key.");
+            return; // Evita que el jugador tome la llave
         }
+
+
     }
 }
+
