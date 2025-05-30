@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Places\SpawnZone.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\items\Bone.cs" />
+    <Compile Include="Assets\Scripts\Places\NewPlaceUnconditional.cs" />
     <Compile Include="Assets\Scripts\NPC and Enemis\GhostAI.cs" />
     <Compile Include="Assets\Scripts\UI\DialogManager.cs" />
     <Compile Include="Assets\Scripts\items\ItemsPool.cs" />

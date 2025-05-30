@@ -11,25 +11,28 @@ public class InventoryManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D inventoryObject)
     {
-        if (inventoryObject.CompareTag("Item"))
+        if (inventoryObject.CompareTag("Item") && inventoryObject.name != "key")
         {
             // Verificar si el objeto es la llave y si la escalera no está en el inventario
             if (inventoryObject.name == "key" && !ItemsPool.Instance.HasItem("ladder"))
             {
                 Debug.Log("You need a ladder to obtain the key.");
+                gameObject.GetComponent<Image>().enabled = true;
                 return; // No permite tomar el object key
             }
-
-            // Si la condición anterior no se cumple, el ítem puede ser agregado
-            for (int i = 0; i < bag.Count; i++)
-            {
-                if (!bag[i].GetComponent<Image>().enabled)
+            
+            
+                // Si la condición anterior no se cumple, el ítem puede ser agregado
+                for (int i = 0; i < bag.Count; i++)
                 {
-                    bag[i].GetComponent<Image>().enabled = true;
-                    bag[i].GetComponent<Image>().sprite = inventoryObject.GetComponent<SpriteRenderer>().sprite;
-                    break;
+                    if (!bag[i].GetComponent<Image>().enabled)
+                    {
+                        bag[i].GetComponent<Image>().enabled = true;
+                        bag[i].GetComponent<Image>().sprite = inventoryObject.GetComponent<SpriteRenderer>().sprite;
+                        break;
+                    }
                 }
-            }
+            
         }
     }
 

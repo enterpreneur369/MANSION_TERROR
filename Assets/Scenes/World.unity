@@ -57310,12 +57310,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1765289958505950268, guid: 2f56e22d39e238443a05ab6cffc2d883, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765289958505950268, guid: 2f56e22d39e238443a05ab6cffc2d883, type: 3}
       propertyPath: newPlaceName
       value: Room1
       objectReference: {fileID: 0}
     - target: {fileID: 1765289958505950268, guid: 2f56e22d39e238443a05ab6cffc2d883, type: 3}
       propertyPath: goToPlaceName
       value: HauntedHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274944265479633204, guid: 2f56e22d39e238443a05ab6cffc2d883, type: 3}
+      propertyPath: newPlaceName
+      value: Room1
       objectReference: {fileID: 0}
     - target: {fileID: 4305750926535143470, guid: 2f56e22d39e238443a05ab6cffc2d883, type: 3}
       propertyPath: m_LocalPosition.x
