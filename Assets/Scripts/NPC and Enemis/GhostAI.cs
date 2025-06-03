@@ -1,96 +1,44 @@
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.SceneManagement; // Necesario para reiniciar la escena
-
-/*
- *  Nombre comportamiento: IA del fantasma
- *  Caso de uso: Cuando el jugador tenga la llave un fantasma lo estará persiguiendo hasta que salga de la casa
- *  Datos de entrada: Llave en el inventario del jugador
- *  Datos de salida: Persecusión de fantasma al jugador
- */
+using UnityEngine.SceneManagement;
 
 public class GhostAI : MonoBehaviour
 {
-    public float chaseSpeed = 4f;  // Velocidad al perseguir
-    public float patrolSpeed = 2f; // Velocidad en patrulla
-    public Transform[] patrolPoints; // Puntos de patrulla
-    public float detectionRange = 10f; // Rango de detección del jugador
-
-    private int currentPatrolIndex = 0;
-    private bool isChasing = false;
-    private NavMeshAgent agent;
-    private InventoryManager inventoryManager;
+    public float speed = 3f;
     private Transform player;
+    private bool isActive = false;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        inventoryManager = FindFirstObjectByType<InventoryManager>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        if (patrolPoints.Length > 0)
-        {
-            agent.destination = patrolPoints[currentPatrolIndex].position;
-            agent.speed = patrolSpeed;
-        }
+        FindPlayer(); // Buscar al jugador al cargar la escena
     }
 
     void Update()
     {
-        if (PlayerHasKey())
+        if (isActive && player != null)
         {
-            ChasePlayer();
-        }
-        else
-        {
-            Patrol();
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
     }
 
-    bool PlayerHasKey()
+    public void ActivateGhost()
     {
-        return inventoryManager != null && inventoryManager.HasItem(3); // 3 = Llave
+        isActive = true;
+        gameObject.SetActive(true); // Aparece el fantasma
+        FindPlayer(); // Intentar encontrar al jugador en caso de que aún no se haya detectado
     }
 
-    void ChasePlayer()
+    public void DeactivateGhost()
     {
-        if (!isChasing)
-        {
-            Debug.Log("👻 El fantasma ha detectado la llave y empieza a perseguir.");
-            isChasing = true;
-            agent.speed = chaseSpeed;
-        }
-
-        agent.destination = player.position;
+        isActive = false;
+        gameObject.SetActive(false); // Desaparece el fantasma
     }
 
-    void Patrol()
+    private void FindPlayer()
     {
-        if (isChasing)
+        GameObject Player = GameObject.FindGameObjectWithTag("Player"); // Busca al jugador por su etiqueta
+        if (Player != null)
         {
-            Debug.Log("👻 El jugador ya no tiene la llave. El fantasma deja de perseguir.");
-            isChasing = false;
-            agent.speed = patrolSpeed;
+            player = Player.transform;    
         }
-
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        {
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
-            agent.destination = patrolPoints[currentPatrolIndex].position;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player")) // Si toca al jugador, es Game Over
-        {
-            Debug.Log("💀 GAME OVER: El fantasma atrapó al jugador.");
-            GameOver();
-        }
-    }
-
-    void GameOver()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
     }
 }

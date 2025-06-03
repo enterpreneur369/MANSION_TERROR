@@ -19,7 +19,8 @@ public class InventoryManager : MonoBehaviour
                 ItemsPool.Instance.AddItem("key");
                 inventoryObject.tag = "Item"; // Cambiar la etiqueta del objeto para evitar que se recoja de nuevo
                 Debug.Log("Object key obtained!");
-                Destroy(inventoryObject.gameObject); // Destruir el objeto después de tomarlo
+                inventoryObject.GetComponent<SpriteRenderer>().enabled = false; // Desactivar el sprite de la llave 
+                //Destroy(inventoryObject.gameObject); // Destruir el objeto después de tomarlo
             }
             else
             {
