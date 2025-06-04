@@ -6,8 +6,7 @@ public class GoToWorld : MonoBehaviour
 {
     // Nombre de la escena a cargar (World)
     public string newPlaceName = "World";
-    // Nombre del spawn point en la escena World donde aparecerá el jugador
-    // Este valor debe coincidir con el valor del spawn zone en World (por ejemplo "HouseFront")
+    // Nombre del spawn point en la escena World donde aparecerá el jugador (por ejemplo "HouseFront")
     public string goToPlaceName = "HouseFront";
     // Requerimiento para avanzar (por ejemplo, la llave)
     public string requiredItem = "Key";

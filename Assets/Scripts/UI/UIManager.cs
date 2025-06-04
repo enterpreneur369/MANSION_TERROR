@@ -14,6 +14,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     // Este método carga la escena llamada "World".
+    void Start()
+    {
+        // Asegúrate de que el tiempo del juego esté en marcha al iniciar la escena
+        Time.timeScale = 1f;
+        LoadWorldWithoutReset();
+    }
     public void GoToWorld()
     {
         SceneManager.LoadScene("World");
@@ -25,11 +31,24 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetFloat("FixedSpawnY", -4.54f);
         if (ItemsPool.Instance != null)
         {
+
             ItemsPool.Instance.ClearItems(); // Nuevo método para limpiar el inventario
             //Destroy(ItemsPool.Instance.gameObject); // Elimina el objeto persistente
-           // ItemsPool.Instance = null;
+           //ItemsPool.Instance = null;
         }
+       
         FindFirstObjectByType<InventoryManager>()?.ClearInventory();
+        FindFirstObjectByType<QuestManager>()?.ResetQuests(); // Resetea las misiones
+        FindFirstObjectByType<DialogManager>()?.ResetDialogs(); // Resetea el jugador
+        QuestManager questManager = FindFirstObjectByType<QuestManager>();
+        questManager?.ResetQuests();
+        questManager?.ActivateMainQuest();   
+    }
+    public void LoadWorldWithoutReset()
+    {
+        Time.timeScale = 1f;
+        // Aquí simplemente cargas la escena "World" sin llamar a ResetQuests, etc.
+        SceneManager.LoadScene("World");
     }
 
     // Este método carga la escena llamada "MainUI".

@@ -30,7 +30,7 @@ public class Key : MonoBehaviour
         {
             String[] text = new[]
                   {
-                        "Necesitas una escalera para alcanzar la llave pero cuidado pueden haber sorpresas!!"
+                        "Necesitas una escalera para alcanzar la llave, pero cuidado pueden haber sorpresas!!"
                     };
             _dialogManager.ShowDialog(text);
             Debug.Log("You need a ladder to obtain the key.");

@@ -3862,6 +3862,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172142604}
     m_Modifications:
+    - target: {fileID: 1907114737739153950, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907114737739153950, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.87
+      objectReference: {fileID: 0}
     - target: {fileID: 2109567835688142015, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 3
@@ -3878,6 +3886,18 @@ PrefabInstance:
       propertyPath: 'patrolPoints.Array.data[2]'
       value: 
       objectReference: {fileID: 8400540}
+    - target: {fileID: 4158380567356534355, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158380567356534355, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158380567356534355, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4158380567356534355, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.822012
@@ -3921,6 +3941,14 @@ PrefabInstance:
     - target: {fileID: 4666508369525147781, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
       propertyPath: m_Name
       value: shadow-80x70_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349324413300950095, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3400982213634020427, guid: 30abda3456e2b3044a9cfd66c7bbe96e, type: 3}
+    - target: {fileID: 6742377031742476141, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8103315016375941523, guid: 90348d610f397cf46b91439c8a9d9c62, type: 3}
       propertyPath: CanvasGO

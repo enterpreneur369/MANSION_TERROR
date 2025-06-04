@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newPlaceName: World
-  goToPlaceName: World
+  goToPlaceName: HouseFront
   requiredItem: Key
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

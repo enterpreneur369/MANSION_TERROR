@@ -14,7 +14,7 @@ public class NPCDialog : MonoBehaviour
     public string[] dialog; // Array de cadenas que almacena los diálogos del NPC.
     public int questId;
     
-    private DialogManager _dialogManager; // Referencia privada al gestor de diálogos.
+    public DialogManager _dialogManager; // Referencia privada al gestor de diálogos.
 
     private bool _playerInTheZone; // Variable booleana que indica si el jugador está en la zona de interacción.
     private QuestManager _questManager;
@@ -24,6 +24,8 @@ public class NPCDialog : MonoBehaviour
     {
         _dialogManager = FindFirstObjectByType<DialogManager>(); // Busca en la escena un objeto de tipo DialogManager y lo asigna a _dialogManager.
         _questManager = FindFirstObjectByType<QuestManager>();
+       
+
     }
 
     // Esta función se llama cuando otro collider entra en contacto con este collider en 2D.
@@ -60,4 +62,6 @@ public class NPCDialog : MonoBehaviour
             _dialogManager.ShowDialog(dialog); // Muestra el diálogo almacenado en el array dialog a través del DialogManager.
         }
     }
+
+
 }

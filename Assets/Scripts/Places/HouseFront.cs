@@ -12,5 +12,8 @@ public class HouseFront : MonoBehaviour
             // Posiciona al jugador en el spawn point
             playerController.transform.position = transform.position;
         }
-    }
+    } 
+ 
 }
+    
+

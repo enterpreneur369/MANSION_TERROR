@@ -15,7 +15,7 @@ public class ActionsManager : MonoBehaviour
 
     public void GiveAction()
     {
-        Debug.Log("ACCION DAR");
+        Debug.Log("Soltar");
 
         if (_inventoryManager.HasItem(1)) // 1 = Hueso
         {

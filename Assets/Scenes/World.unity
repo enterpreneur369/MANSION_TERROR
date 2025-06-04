@@ -367,10 +367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377da835c8de65b4a9d6d6b8615ed298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcDialog: {fileID: 1413452838}
   quests:
   - {fileID: 1020141425}
   questCompleted: 
   itemCollected: key
+  mainquest: {fileID: 1020141423}
 --- !u!1 &123947586
 GameObject:
   m_ObjectHideFlags: 0
@@ -44568,90 +44570,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &742945337
+--- !u!1 &742945337 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3539470465375547595, guid: dcd2e7121c091324a93d29aed0ec4c22, type: 3}
+  m_PrefabInstance: {fileID: 3686963278599467140}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 742945338}
-  - component: {fileID: 742945339}
-  m_Layer: 0
-  m_Name: LinternLight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &742945338
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742945337}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.005338529, w: 0.99998575}
-  m_LocalPosition: {x: 0.03, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1453944555}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &742945339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742945337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.9
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0b7c00ff00000000e5c2e661eb0a83ab8bc1bc6367257fc2
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowsEnabled: 0
-  m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0
-  m_ShadowSoftnessFalloffIntensity: 0.5
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2.5012448
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &753384109
 GameObject:
   m_ObjectHideFlags: 0
@@ -49568,9 +49491,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1926575547}
+      - m_Target: {fileID: 6979141909616481369, guid: 1170532f906757142a7acd3dc6812315, type: 3}
         m_TargetAssemblyTypeName: UIManager, MyAssembly
-        m_MethodName: GoToMainUI
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50476,6 +50399,7 @@ GameObject:
   - component: {fileID: 1413452837}
   - component: {fileID: 1413452839}
   - component: {fileID: 1413452838}
+  - component: {fileID: 1413452840}
   m_Layer: 0
   m_Name: DialogZone
   m_TagString: Untagged
@@ -50513,6 +50437,7 @@ MonoBehaviour:
   dialog:
   - Ten cuidado O_O
   questId: 0
+  _dialogManager: {fileID: 1923065213}
 --- !u!61 &1413452839
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50559,6 +50484,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.9414738, y: 0.31744766}
   m_EdgeRadius: 0
+--- !u!114 &1413452840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413452836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64352f021296a5e4798176972257eda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItem: Key
+  missionDialog:
+  - "Carolina: \xA1Oh, encuentras la llave! \xBFMe la entregas?"
+  - 'Carolina: Que valiente, podremos ir al Baile juntos.'
+  - "Misi\xF3n completada."
 --- !u!1 &1425576999
 GameObject:
   m_ObjectHideFlags: 0
@@ -51368,8 +51310,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1926575547}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 6979141909616481369, guid: 1170532f906757142a7acd3dc6812315, type: 3}
+        m_TargetAssemblyTypeName: UIManager, MyAssembly
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -56604,7 +56546,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926575545}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd40d7a550425664385f858f2e54feea, type: 3}
   m_Name: 
@@ -57194,7 +57136,7 @@ GameObject:
   - component: {fileID: 2098023283}
   - component: {fileID: 2098023282}
   m_Layer: 0
-  m_Name: SpawnInWorld (1)
+  m_Name: HouseFront
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -57370,9 +57312,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5066410379491559864, guid: dcd2e7121c091324a93d29aed0ec4c22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 742945338}
-    - targetCorrespondingSourceObject: {fileID: 5066410379491559864, guid: dcd2e7121c091324a93d29aed0ec4c22, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1425577000}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd2e7121c091324a93d29aed0ec4c22, type: 3}
@@ -57493,6 +57432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4bbb139ce49754db6c141a2dad3d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lintern: {fileID: 742945337}
 --- !u!1001 &7420308034705389250
 PrefabInstance:
   m_ObjectHideFlags: 0

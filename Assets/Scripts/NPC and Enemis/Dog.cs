@@ -32,6 +32,23 @@ public class Dog : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInZone = true;
+            if (ItemsPool != null && !ItemsPool.HasItem("bone")) // Verifica si el hueso está en el pool de ítems
+            {
+                String[] text = new[]
+                {
+                    "Hola, Traeme un hueso, o me comere los tuyos! jaja."
+                };
+                _dialogManager.ShowDialog(text); // Muestra el diálogo al jugador.
+            }
+            else
+                {
+                String[] text = new[]
+                {
+                    "Hola, ¿Tienes un hueso para mí? revisa tu bolsa!"
+                };
+                _dialogManager.ShowDialog(text); // Muestra el diálogo al jugador si ya tiene el hueso.
+            }
+
         }
     }
 
@@ -63,7 +80,7 @@ public class Dog : MonoBehaviour
                 Debug.Log("El perro necesita un hueso, pero no está en el pool de ítems.");
                 String[] text = new[]
                     {
-                        "Traeme un hueso, o me comere los tuyos! jaja"
+                        ""
                     };
                 _dialogManager.ShowDialog(text);
             }
