@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\NPC and Enemis\Dog.cs" />
     <Compile Include="Assets\Scripts\MISSIONkEY\FinishMision.cs" />
     <Compile Include="Assets\Scripts\Places\SpawnInWorld.cs" />
+    <Compile Include="Assets\Scripts\UI\Controls.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
     <Compile Include="Assets\Scripts\MISSIONkEY\key.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
