@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
     {
         // Asegúrate de que el tiempo del juego esté en marcha al iniciar la escena
         Time.timeScale = 1f;
-        LoadWorldWithoutReset();
     }
     public void GoToWorld()
     {
@@ -26,7 +25,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        
         PlayerPrefs.SetFloat("FixedSpawnX", 2.57f); 
         PlayerPrefs.SetFloat("FixedSpawnY", -4.54f);
         if (ItemsPool.Instance != null)
@@ -68,6 +66,7 @@ public class UIManager : MonoBehaviour
     // Este método carga la escena llamada "ControlsUI".
     public void GoToControlsUI()
     {
+        
         SceneManager.LoadScene("ControlsUI");
     }
     

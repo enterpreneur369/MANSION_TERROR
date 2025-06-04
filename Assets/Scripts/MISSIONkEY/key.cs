@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    public string itemName = "Key"; // Nombre único del ítem
     private DialogManager _dialogManager;
     public string requiredItem = "ladder"; // Ítem necesario para obtener la llave
     public GhostAI ghost; // Referencia al enemigo fantasma
@@ -20,11 +21,11 @@ public class Key : MonoBehaviour
         if (ItemsPool.Instance.HasItem(requiredItem))
         {
             //ItemsPool.RemoveItem("Ladder");
-            ItemsPool.Instance.AddItem("Key");
+            ItemsPool.Instance.AddItem(itemName);
             Debug.Log("Object key obtaine!");
-            GetComponent<SpriteRenderer>().enabled = false; // Desactivar el sprite de la llave
+            //GetComponent<SpriteRenderer>().enabled = false; // Desactivar el sprite de la llave
             
-            //Destroy(gameObject); // Destruir el objeto después de tomarlo
+            Destroy(gameObject); // Destruir el objeto después de tomarlo
         }
         else if (!ItemsPool.Instance.HasLadder())
         {

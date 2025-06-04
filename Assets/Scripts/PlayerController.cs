@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         if (walking)
             lastMovement = movement.normalized;
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)||Input.GetKeyDown(KeyCode.Escape))
         {
             pausePlayPanel.gameObject.SetActive(true);
             pausePlayPanel.GetComponent<UIManager>().StopGame();

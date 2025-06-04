@@ -14,6 +14,7 @@ public class GoToWorld : MonoBehaviour
     private DialogManager _dialogManager;
     private QuestManager _questManager;
     private ItemsPool _inventory; // Sistema de inventario
+    public UIManager _uiManager; // Referencia al administrador de la UI
 
     private void Start()
     {
@@ -35,9 +36,10 @@ public class GoToWorld : MonoBehaviour
                     // Asigna el spawn point para el jugador.
                     PlayerController playerController = FindFirstObjectByType<PlayerController>();
                     playerController.nextPlaceName = goToPlaceName;
+                    _uiManager.LoadWorldWithoutReset();
 
                     // Carga la escena World
-                    SceneManager.LoadScene(newPlaceName);
+                    //SceneManager.LoadScene(newPlaceName);
                 }
                 else
                 {

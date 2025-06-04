@@ -16,7 +16,7 @@ public class InventoryManager : MonoBehaviour
         // Verificar si el objeto es la llave y si la escalera está en el inventario
             if (ItemsPool.Instance.HasLadder())
             {
-                ItemsPool.Instance.AddItem("key");
+                //ItemsPool.Instance.AddItem("key");
                 inventoryObject.tag = "Item"; // Cambiar la etiqueta del objeto para evitar que se recoja de nuevo
                 Debug.Log("Object key obtained!");
                 inventoryObject.GetComponent<SpriteRenderer>().enabled = false; // Desactivar el sprite de la llave 

@@ -48,6 +48,7 @@ public class ItemsPool : MonoBehaviour
     {
         if (collectedItems.Contains(itemName))
         {
+            
             collectedItems.Remove(itemName);
             Debug.Log($"Item removed: {itemName}"); // Log para depuración
         }

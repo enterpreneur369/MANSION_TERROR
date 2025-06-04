@@ -6,6 +6,7 @@ public class Cinematic : MonoBehaviour
 {
     private VideoPlayer _videoPlayer;
     [SerializeField] private AudioSource _audioSource;
+    UIManager _uiManager;
 
     [SerializeField] private string videoFileName;
 
@@ -30,6 +31,14 @@ public class Cinematic : MonoBehaviour
     public void CheckOver(VideoPlayer vp)
     {
         _audioSource.Stop();
-        SceneManager.LoadScene("World");
+        //SceneManager.LoadScene("World");
+        GoToWorld();
     }
+    public void GoToWorld()
+    {
+        //SceneManager.LoadScene("World");
+        UIManager uiManager = FindFirstObjectByType<UIManager>();
+        uiManager.GoToWorld();
+    }
+    
 }
