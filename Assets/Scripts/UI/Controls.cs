@@ -6,6 +6,23 @@ public class PauseMenuController : MonoBehaviour
     public GameObject pausePanel;
     public GameObject controlsPanel;
 
+    private static  PauseMenuController  instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            // Evitar que este objeto se destruya al cambiar de escena.
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // Destruye duplicados si se carga el mismo Canvas en otra escena
+            Destroy(gameObject);
+        }
+    }
+
+
     // Llama este método al presionar el botón de "Control"
     public void ShowControls()
     {
@@ -28,5 +45,8 @@ public class PauseMenuController : MonoBehaviour
         // Vuelve a mostrar el panel de pausa
         if (pausePanel != null)
             pausePanel.SetActive(true);
-    }
+        Time.timeScale = 1f;
+    
+
+}
 }

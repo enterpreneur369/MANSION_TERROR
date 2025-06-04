@@ -12,7 +12,7 @@ using UnityEngine.UI;
  */
 
 public class UIManager : MonoBehaviour
-{
+{ 
     // Este método carga la escena llamada "World".
     void Start()
     {
