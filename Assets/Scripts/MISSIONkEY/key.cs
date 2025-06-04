@@ -19,7 +19,7 @@ public class Key : MonoBehaviour
         // Verificar si el jugador tiene el ítem necesario
         if (ItemsPool.Instance.HasItem(requiredItem))
         {
-            ItemsPool.RemoveItem("Ladder");
+            //ItemsPool.RemoveItem("Ladder");
             ItemsPool.Instance.AddItem("Key");
             Debug.Log("Object key obtaine!");
             GetComponent<SpriteRenderer>().enabled = false; // Desactivar el sprite de la llave
