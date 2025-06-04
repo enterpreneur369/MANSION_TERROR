@@ -29,7 +29,11 @@ public class ItemsPool : MonoBehaviour
 
         }
     }
-
+    public void ClearItems()
+    {
+        collectedItems.Clear();
+        Debug.Log("ItemsPool has been cleared.");
+    }
     public bool HasItem(string itemName)
     {
         return collectedItems.Contains(itemName);
@@ -39,5 +43,17 @@ public class ItemsPool : MonoBehaviour
         Debug.Log("Checking for ladder in items pool.");
         return HasItem("ladder");
 
+    }
+    public void RemoveItem(string itemName)
+    {
+        if (collectedItems.Contains(itemName))
+        {
+            collectedItems.Remove(itemName);
+            Debug.Log($"Item removed: {itemName}"); // Log para depuración
+        }
+        else
+        {
+            Debug.LogWarning($"Attempted to remove item that does not exist: {itemName}");
+        }
     }
 }

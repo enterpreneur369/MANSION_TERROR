@@ -71,13 +71,16 @@
     <Compile Include="Assets\Scripts\NPC and Enemis\GhostAI.cs" />
     <Compile Include="Assets\Scripts\UI\DialogManager.cs" />
     <Compile Include="Assets\Scripts\items\ItemsPool.cs" />
+    <Compile Include="Assets\Scripts\MISSIONkEY\GoToWorld.cs" />
     <Compile Include="Assets\Scripts\items\ladder.cs" />
     <Compile Include="Assets\Scripts\items\flashlight.cs" />
     <Compile Include="Assets\Scripts\items\Item.cs" />
     <Compile Include="Assets\Scripts\ActionsManager.cs" />
+    <Compile Include="Assets\Scripts\NPC and Enemis\Damage.cs" />
     <Compile Include="Assets\Scripts\Places\Condition.cs" />
     <Compile Include="Assets\Scripts\items\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\NPC and Enemis\Dog.cs" />
+    <Compile Include="Assets\Scripts\Places\SpawnInWorld.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
     <Compile Include="Assets\Scripts\MISSIONkEY\key.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -85,6 +88,8 @@
     <Compile Include="Assets\Scripts\Quest.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\UI\NPCDialog.cs" />
+    <Compile Include="Assets\Scripts\Places\HouseFront.cs" />
+    <Compile Include="Assets\Scripts\MISSIONkEY\Conditional.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Scripts.asmdef" />

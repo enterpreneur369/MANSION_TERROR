@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9181833924532230662}
   - component: {fileID: 1907114737739153950}
   - component: {fileID: 2109567835688142015}
+  - component: {fileID: 8103315016375941523}
   m_Layer: 0
   m_Name: shadow-80x70_0
   m_TagString: Untagged
@@ -170,7 +171,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9469d5475c86b104eab27753d0c717a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 4
-  patrolSpeed: 2
-  patrolPoints: []
-  detectionRange: 10
+  speed: 3
+--- !u!114 &8103315016375941523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666508369525147781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536656eac9aa9cd41ba17067158617e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasGO: {fileID: 0}

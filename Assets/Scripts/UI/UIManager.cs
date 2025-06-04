@@ -17,8 +17,21 @@ public class UIManager : MonoBehaviour
     public void GoToWorld()
     {
         SceneManager.LoadScene("World");
+        Time.timeScale = 1f;
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        
+        PlayerPrefs.SetFloat("FixedSpawnX", 2.57f); 
+        PlayerPrefs.SetFloat("FixedSpawnY", -4.54f);
+        if (ItemsPool.Instance != null)
+        {
+            ItemsPool.Instance.ClearItems(); // Nuevo método para limpiar el inventario
+            //Destroy(ItemsPool.Instance.gameObject); // Elimina el objeto persistente
+           // ItemsPool.Instance = null;
+        }
+        FindFirstObjectByType<InventoryManager>()?.ClearInventory();
     }
-    
+
     // Este método carga la escena llamada "MainUI".
     public void GoToMainUI()
     {
@@ -29,8 +42,7 @@ public class UIManager : MonoBehaviour
     public void GoToCinematic()
     {
         SceneManager.LoadScene("Cinematic");
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        
 
     }
 
@@ -58,4 +70,20 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         
     }
+
+    public void QuitGame()
+    {
+        // Guardar el estado del juego antes de salir
+        PlayerPrefs.Save();
+        Debug.Log("Juego guardado al salir.");
+#if UNITY_EDITOR
+        // Detiene el modo de juego en el Editor
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            // Cierra la aplicación en builds compiladas
+            Application.Quit();
+#endif
+    }
+
+
 }

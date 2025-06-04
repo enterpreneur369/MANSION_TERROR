@@ -78,4 +78,15 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(lastHorizontal, lastMovement.x);
         _animator.SetFloat(lastVertical, lastMovement.y);
     }
+    public void Die()
+    {
+        
+        Debug.Log("Jugador ha muerto");
+
+        // Desactivar los componentes del jugador
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        // Pausar el juego, mostrar pantalla de Game Over, etc.
+    }
 }

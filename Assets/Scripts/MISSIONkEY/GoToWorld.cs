@@ -2,15 +2,19 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoToNewPlace : MonoBehaviour
+public class GoToWorld : MonoBehaviour
 {
-    public string newPlaceName = "New Scene Value";
-    public string goToPlaceName;
+    // Nombre de la escena a cargar (World)
+    public string newPlaceName = "World";
+    // Nombre del spawn point en la escena World donde aparecerá el jugador
+    // Este valor debe coincidir con el valor del spawn zone en World (por ejemplo "HouseFront")
+    public string goToPlaceName = "HouseFront";
+    // Requerimiento para avanzar (por ejemplo, la llave)
+    public string requiredItem = "Key";
+
     private DialogManager _dialogManager;
     private QuestManager _questManager;
-    private ItemsPool _inventory; // Referencia al sistema de inventario
-
-    public string requiredItem = "Flashlight"; // Nombre del objeto necesario para entrar
+    private ItemsPool _inventory; // Sistema de inventario
 
     private void Start()
     {
@@ -23,18 +27,24 @@ public class GoToNewPlace : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            // Verifica que la misión principal esté activa.
             if (_questManager.quests[0].gameObject.activeInHierarchy)
             {
-                if (_inventory.HasItem(requiredItem)) // Verifica si el jugador tiene la linterna
+                // Verifica que el jugador tiene la llave requerida.
+                if (_inventory.HasItem(requiredItem))
                 {
-                    FindFirstObjectByType<PlayerController>().nextPlaceName = goToPlaceName;
+                    // Asigna el spawn point para el jugador.
+                    PlayerController playerController = FindFirstObjectByType<PlayerController>();
+                    playerController.nextPlaceName = goToPlaceName;
+
+                    // Carga la escena World
                     SceneManager.LoadScene(newPlaceName);
                 }
                 else
                 {
                     String[] text = new[]
                     {
-                        "Necesitas la linterna para entrar."
+                        "Parece que necesitas una llave para avanzar."
                     };
                     _dialogManager.ShowDialog(text);
                 }
@@ -43,7 +53,7 @@ public class GoToNewPlace : MonoBehaviour
             {
                 String[] text = new[]
                 {
-                    "Parece que no has comenzado la misiÃ³n necesaria."
+                    "Parece que no has comenzado la misión necesaria."
                 };
                 _dialogManager.ShowDialog(text);
             }

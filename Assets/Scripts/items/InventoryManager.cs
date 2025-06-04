@@ -85,4 +85,13 @@ public class InventoryManager : MonoBehaviour
     {
         Navigate();
     }
+    public void ClearInventory()
+    {
+        foreach (GameObject slot in bag)
+        {
+            slot.GetComponent<Image>().enabled = false;
+            slot.GetComponent<Image>().sprite = null;
+        }
+        Debug.Log("Inventory cleared!");
+    }
 }

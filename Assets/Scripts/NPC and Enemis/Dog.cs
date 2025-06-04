@@ -1,16 +1,18 @@
+using System;
 using UnityEngine;
 
 public class Dog : MonoBehaviour
 {
     public GameObject messagePanel; // Mensaje cuando el perro se va.
     public AudioSource dogAudio; // Audio del perro.
-
+    private DialogManager _dialogManager;
     private bool playerInZone = false;
     private InventoryManager inventoryManager;
     private ItemsPool ItemsPool; // Pool de ítems para verificar si el hueso ha sido recogido.
 
     void Start()
     {
+        _dialogManager = FindFirstObjectByType<DialogManager>();
         inventoryManager = FindFirstObjectByType<InventoryManager>(); // Obtiene el inventario.
 
         if (dogAudio == null)
@@ -53,11 +55,17 @@ public class Dog : MonoBehaviour
             if (ItemsPool.HasItem("bone")) // Verifica si el hueso (ID: 1) está en ItemsPool
             {
                 inventoryManager.RemoveItem(1); // Remueve el hueso del inventario
+                ItemsPool.RemoveItem("bone"); // Remueve el hueso del pool de ítems
                 DisappearDog(); // Hace que el perro se vaya
             }
             else
             {
                 Debug.Log("El perro necesita un hueso, pero no está en el pool de ítems.");
+                String[] text = new[]
+                    {
+                        "Traeme un hueso, o me comere los tuyos! jaja"
+                    };
+                _dialogManager.ShowDialog(text);
             }
         }
     }
