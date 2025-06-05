@@ -1,0 +1,59 @@
+objetivos pendientes 20 de may 2025
+4,6,8,9-2,10,11,12,13,14,15,16,17,18
+_______________________________________________________________________________________
+objetivos 
+1) hacer funcionar hueso con perro(listo)
+2) corregir canvas mission 1 tomar linterna (listo)
+3) definir camino hasta la casa. (listo)
+
+4) no tomar llave sin escalera(código):
+	- error al tomar llave no deja salir de la habitación sin completar mission q es tomar escalera lógica(revisar logica)
+5) revisar contador de items (listo)
+6) canvas ui opción reiniciar opción salir 
+7) revisar inventory manager carga de items (listo)
+8) revisar logica cambiar escenario.
+9) mecanicas
+   	- ENTREGAR HUESO (LISTO)
+	-ENCENDER LUZ ( FUNCION ? OSCURECER MAPA DE CASA UTILIZAR CONTRA FANTASMAS )(listo, revisar iluminacion en mansion)
+10) revisar logica llave no entregar si no tiene escalera, permitir salir del room
+11) revisar logica escalera no tomar mas de 1 desaparecer al tomar revisar colliders del objeto
+12) revisar salida de la mansion 
+13) activar IA fantasmas, otros retos.
+14) revisar iluminacion de world para que al salir sea de noche pero que se vea el mundo activar iluminacion de lamparas q muestren el camino.
+15) revisar ui general de juego fallas en menu pausa(reiniciar, salir)
+16) agregar elementos a los rooms. 
+17) ingreso a la casa.
+18) desaparecer objeto el inventario al utilizar.
+dudas frente al proyecto:
+
+colocar un condicional a la llave primero debes cumplir otra mission 
+controles soltar y usar teclas mas familiares para el usuario 
+salir del ui tampoco funciona.
+ubicación de la puerta en la casa en mundo ? 
+debería estar la zona de ingreso en donde se encuentra la puerta.() revisar
+lampara: debería poder subir para tomar la llave(utiliza escalera resolver logica)
+	- la lampara debería ser un objeto y no ser parte del tilemap ya que el usuario debe interactuar con ella.
+por que no utilizar un mapa de generación procedural? mas sencillo consume menos recursos de carga(no se cambia por falta de tiempo esto requeriría re hacer todo el proyecto)
+items
+fantasma ? no funciona o esta bugeado no ingresa al tilemap
+video-- canvas con opción de skip, cambiar video por imágenes que el usuario pueda adelantar el tiempo de presentación demora mucho.
+canvas omitir cinemática? no funciona
+consola de audio ? no tiene 
+function de zona 1 - lo ideal es que cada zona y elementos del juego sean funcionales(es decir que cumplan una function ) agregar reto para cada sala
+zona 5? vacia
+zona 6 perro
+room 7 ? vacia
+room 8? vacia 
+room 9 escalera --- function= tomar llave (revisar recolección ya que toma varias escaleras y desaparece la segunda ves)
+
+sugerencias: 
+siempre los elementos del mapa deben cumplir una función sea informativa o interactiva, es decir hacer el juego interactivo con el usuario.
+presentar al usuario ayudas visuales o sonoras dentro del juego para resolver los retos.
+se sugiere mapa de generación procedural en una sola escena ya que esto trae varios beneficios tales como:
+	1) menos consumo de recursos al cargar una escena.
+	2) facilidad de acceso a items de recolección sin tener que acceder a la memoria PlayerPref.
+	3) mayor libertad al usuario de escoger el camino y esto plantea un reto.
+	4) al estar los elementos almacenados como prefabs el consumo de memoria y procesamiento mejora el game play del usuario y facilita la recursividad dentro del juego.
+
+
+

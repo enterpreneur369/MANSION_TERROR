@@ -7,18 +7,21 @@ TagManager:
   - Item
   - NPC
   - pauseMenu
+  - bone
+  - lintern
+  - key
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore Raycast
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - fx
+  - path
+  - lintern
+  - bone
+  - controls
   - 
   - 
   - 
@@ -53,14 +56,14 @@ TagManager:
   - name: Foreground
     uniqueID: 2877491947
     locked: 0
+  - name: Effects
+    uniqueID: 466619661
+    locked: 0
   - name: Player
     uniqueID: 1673314699
     locked: 0
   - name: Topground
     uniqueID: 3263112551
-    locked: 0
-  - name: Effects
-    uniqueID: 466619661
     locked: 0
   m_RenderingLayers:
   - Default
